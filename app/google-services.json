@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "418147113036",
+    "project_id": "fluid-skyline-145818"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418147113036:android:aa790fe3722cd3d6",
+        "android_client_info": {
+          "package_name": "com.loader.loadi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "418147113036-ie705u945bi57671alu8oqf5dt3qtsla.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.loader.loadi",
+            "certificate_hash": "2F89D236A9070A402C1195356FCB6183C51E4BAB"
+          }
+        },
+        {
+          "client_id": "418147113036-k5sk9v5vd1acihppikretb41qms89q3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoGmRh-J2o5P-z9bW8AKTA2ZlGY70NGmc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
