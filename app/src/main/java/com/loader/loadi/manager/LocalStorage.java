@@ -12,6 +12,7 @@ public class LocalStorage {
 
 
     public static final String WEBSERVICE = "webservice";
+    public static final String SAVE_NUMBER = "save_number";
 
     public static final String FIRST_LOADED = "first_loaded";
 

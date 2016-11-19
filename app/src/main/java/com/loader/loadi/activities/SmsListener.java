@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Telephony;
-import android.support.v7.app.AppAlertDialog;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.util.Log;
@@ -41,35 +40,37 @@ public class SmsListener extends BroadcastReceiver {
 
                         String[] cont_msg_array = msgBody.split("--");
 
-                        if(msg_from.equals("808")){
-                            String[] msg = msgBody.split(" ");
-                            Log.e("msg[23]",msg[23]);
-
-                            TempPhoneDataSource tempPhoneDataSource = new TempPhoneDataSource();
-                            TempPhone phone = tempPhoneDataSource.getFirst();
-                            if(msg.length == 24){
-                                String ref = msg[23].substring(8, msg[23].length());
-                                Log.e("ref", ref);
-//                                pass_again_to(ref + "--number--"+phone.getPhone_number());
-                                pass_load_to_smart();
-                                tempPhoneDataSource.clear();
-                            }
-                        }else if(msg_from.substring(0,1).equals("2")){
-                            String[] msg = msgBody.split(" ");
-                            Log.e("msg[23]", msg[23]);
-                            TempPhoneDataSource tempPhoneDataSource = new TempPhoneDataSource();
-                            TempPhone phone = tempPhoneDataSource.getFirst();
-                            if(msg.length == 25 && msg[7].equals(phone.getPhone_number())){
-                                String ref = msg[23].substring(8, msg[23].length());
-                                Log.e("ref", ref);
-//                                pass_again_to(ref + "--number--"+phone.getPhone_number());
-                                pass_load_to_globe(msg_from);
-                                tempPhoneDataSource.clear();
-                            }
-                        }
+//                        if(msg_from.equals("808")){
+//                            String[] msg = msgBody.split(" ");
+//                            Log.e("msg[23]",msg[23]);
+//
+//                            TempPhoneDataSource tempPhoneDataSource = new TempPhoneDataSource();
+//                            TempPhone phone = tempPhoneDataSource.getFirst();
+//                            if(msg.length == 24){
+//                                String ref = msg[23].substring(8, msg[23].length());
+//                                String amount = msg[7].substring(1, msg[7].length());
+//                                Log.e("ref", ref);
+//                                pass_again_to(ref + "--sendto--"+phone.getPhone_number()+"--amount--"+amount);
+//                                pass_load_to_smart();
+//                                tempPhoneDataSource.clear();
+//                            }
+//                        }else
+//                        if(msg_from.substring(0,1).equals("2")){
+//                            String[] msg = msgBody.split(" ");
+//                            Log.e("msg[23]", msg[23]);
+//                            TempPhoneDataSource tempPhoneDataSource = new TempPhoneDataSource();
+//                            TempPhone phone = tempPhoneDataSource.getFirst();
+//                            if(msg.length == 25 && msg[7].equals(phone.getPhone_number())){
+//                                String ref = msg[23].substring(8, msg[23].length());
+//                                Log.e("ref", ref);
+////                                pass_again_to(ref + "--number--"+phone.getPhone_number());
+//                                pass_load_to_globe(msg_from);
+//                                tempPhoneDataSource.clear();
+//                            }
+//                        }
 //                        else if(cont_msg_array[0].equals("loadi") && cont_msg_array[2].equals("number")){
 //                        }
-                        abortBroadcast();
+//                        abortBroadcast();
                     }
                 }catch(Exception e){
                             Log.e("Exception caught",e.getMessage());
@@ -97,7 +98,7 @@ public class SmsListener extends BroadcastReceiver {
     public void pass_again_to(String ref){
         try {
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage("09078840018", null, "loadi/" + ref, null, null);
+            smsManager.sendTextMessage("09078840018", null, "loadi--" + ref, null, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
