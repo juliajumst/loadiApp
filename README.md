@@ -1,4 +1,4 @@
-# loadiApp v.0.0.1  
+# loadiApp v.0.5.1  
 
 NOTE: If you done changes big or small with the app, even it is just a line of code or a semicolon please do address it here. It is important
 to document all of our works and efforts in this project. You must have to specifically or literally or whatever you want to explain the changes
